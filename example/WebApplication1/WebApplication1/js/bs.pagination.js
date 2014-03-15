@@ -5,7 +5,7 @@
 
     Usage:
     ------
-    set gridvew property: PagerStyle-CssClass="bs-pagination" 
+    set gridview property: PagerStyle-CssClass="bs-pagination" 
 */
 
 $(document).ready(function () {
