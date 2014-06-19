@@ -9,24 +9,24 @@
 */
 
 $(document).ready(function () {
-                $('.bs-pagination td table').each(function (index, obj) {
-                    convertToPagination(obj)
-                });    
+  $('.bs-pagination td table').each(function (index, obj) {
+    convertToPagination(obj)
+  });
 });
 
 function convertToPagination(obj) {
-    var list = $('<ul class="pagination"/>');
+  var liststring = '<ul class="pagination">';
 
-    $(obj).find("tbody tr").each(function () {
-        var p = $(this).children().map(function () {
-            return "<li>" + $(this).html() + "</li>";
-            return $(this).html();
-        });
-
-        list.append("<li>" + $.makeArray(p).join("") + "</li>");
+  $(obj).find("tbody tr").each(function () {
+    $(this).children().map(function () {
+      liststring = liststring + "<li>" + $(this).html() + "</li>";
     });
-    list.find('span').parent().addClass('active');
+  });
+  liststring = liststring + "</ul>";
+  var list = $(liststring);
+  list.find('span').parent().addClass('active');
 
-    $(obj).replaceWith(list);
+  $(obj).replaceWith(list);
 }
+
            
